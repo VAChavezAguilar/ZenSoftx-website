@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Automatizaciones | ZenSoftx</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="logo.png" alt="ZenSoftx Logo" class="brand-logo" />
+        <span>Zen<em>Softx</em></span>
+      </a>
+      <ul class="navbar-nav" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="automatizaciones.html" class="active" aria-current="page">Automatizaciones</a></li>
+        <li><a href="dashboard-usuario.html">Mi Panel</a></li>
+        <li><a href="admin-servicios.html">Servicios API / OAuth</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="login.html" class="btn btn-ghost btn-sm">Iniciar sesión</a>
+        <a href="registro.html" class="btn btn-primary btn-sm">Registrarse</a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">⚡ Inicio</a>
+    <a href="automatizaciones.html">🤖 Automatizaciones</a>
+    <a href="dashboard-usuario.html">👤 Mi Panel</a>
+    <a href="admin-servicios.html">🔑 Servicios API</a>
+  </div>
+
+  <main class="page-content">
+
+    <!-- PAGE HEADER -->
+    <section style="background:radial-gradient(circle at 50% 20%, #161926 0%, #08090C 90%);padding:var(--space-12) 0;border-bottom:1px solid var(--border-color);" aria-labelledby="catalog-heading">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span class="separator" aria-hidden="true">›</span>
+          <span class="current">Automatizaciones</span>
+        </nav>
+        <h1 id="catalog-heading" style="color:var(--white);margin-bottom:var(--space-3);">Catálogo de Automatizaciones</h1>
+        <p style="color:var(--gray-300);font-size:var(--text-lg);">Explora e integra flujos de trabajo automatizados para conectar tus plataformas externas.</p>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:280px 1fr;gap:var(--space-8);align-items:start;" id="catalog-layout">
+
+          <!-- SIDEBAR FILTROS -->
+          <aside aria-label="Filtros de búsqueda" style="position:sticky;top:calc(var(--navbar-height) + var(--space-4));">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title" style="font-size:var(--text-base);">🔍 Filtros de Búsqueda</h3>
+                <button class="btn btn-ghost btn-sm" type="button" aria-label="Limpiar filtros">Limpiar</button>
+              </div>
+
+              <div style="margin-bottom:var(--space-5);">
+                <div class="form-label" style="margin-bottom:var(--space-3);">Buscar automatización</div>
+                <div class="search-bar">
+                  <span aria-hidden="true">🔍</span>
+                  <input type="search" placeholder="Nombre, API key, servicio..." aria-label="Buscar automatización" />
+                </div>
+              </div>
+
+              <div style="margin-bottom:var(--space-5);">
+                <div class="form-label" style="margin-bottom:var(--space-3);">Categoría</div>
+                <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+                  <label class="checkbox-group">
+                    <input type="checkbox" checked aria-label="Todas las categorías" /> Todas <span class="badge badge-gray no-dot" style="margin-left:auto;">48</span>
+                  </label>
+                  <label class="checkbox-group">
+                    <input type="checkbox" aria-label="Filtrar IA" /> Inteligencia Artificial <span class="badge badge-primary no-dot" style="margin-left:auto;">12</span>
+                  </label>
+                  <label class="checkbox-group">
+                    <input type="checkbox" aria-label="Filtrar CRM" /> CRM & Ventas <span class="badge badge-success no-dot" style="margin-left:auto;">10</span>
+                  </label>
+                  <label class="checkbox-group">
+                    <input type="checkbox" aria-label="Filtrar DevOps" /> DevOps & Cloud <span class="badge badge-accent no-dot" style="margin-left:auto;">8</span>
+                  </label>
+                  <label class="checkbox-group">
+                    <input type="checkbox" aria-label="Filtrar Finanzas" /> Finanzas & Pagos <span class="badge badge-warning no-dot" style="margin-left:auto;">6</span>
+                  </label>
+                  <label class="checkbox-group">
+                    <input type="checkbox" aria-label="Filtrar Soporte" /> Soporte & Helpdesk <span class="badge badge-gray no-dot" style="margin-left:auto;">7</span>
+                  </label>
+                </div>
+              </div>
+
+              <div style="margin-bottom:var(--space-5);">
+                <div class="form-label" style="margin-bottom:var(--space-3);">Tipo de Trigger</div>
+                <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+                  <label class="radio-group"><input type="radio" name="trigger" checked /> Todos los triggers</label>
+                  <label class="radio-group"><input type="radio" name="trigger" /> Webhook HTTP</label>
+                  <label class="radio-group"><input type="radio" name="trigger" /> Cron Programado</label>
+                  <label class="radio-group"><input type="radio" name="trigger" /> Event Driven</label>
+                </div>
+              </div>
+
+              <button class="btn btn-primary w-full" type="button">Aplicar Filtros</button>
+            </div>
+          </aside>
+
+          <!-- GRID AUTOMATIZACIONES -->
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-4);">
+              <p style="color:var(--gray-300);font-size:var(--text-sm);">Mostrando <strong>6</strong> de <strong>48</strong> automatizaciones activas</p>
+              <div style="display:flex;align-items:center;gap:var(--space-3);">
+                <span style="font-size:var(--text-sm);color:var(--gray-400);">Ordenar por:</span>
+                <select class="form-control" style="width:auto;padding:var(--space-2) var(--space-6) var(--space-2) var(--space-3);" aria-label="Ordenar por">
+                  <option>Más Populares</option>
+                  <option>Más Recientes</option>
+                  <option>Mayor Ejecución</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+
+              <!-- Card 1 -->
+              <article class="course-card">
+                <div class="course-card-image">
+                  <div class="course-thumb-placeholder">🤖</div>
+                  <span class="course-card-badge badge badge-primary no-dot">Inteligencia Artificial</span>
+                </div>
+                <div class="course-card-body">
+                  <div class="course-category">IA & Ventas</div>
+                  <h3 class="course-title">Sincronización Inteligente de Leads CRM</h3>
+                  <p class="course-instructor">🔌 OpenAI API + HubSpot CRM</p>
+                  <div class="course-meta">
+                    <span class="course-meta-item">⚡ Trigger: Webhook HTTP</span>
+                    <span class="course-meta-item">🕒 Latencia: ~420ms</span>
+                    <span class="course-meta-item">👥 1,240 usuarios</span>
+                  </div>
+                </div>
+                <div class="course-card-footer">
+                  <div class="course-price"><span class="free">Activo</span></div>
+                  <a href="detalle-automatizacion.html" class="btn btn-primary btn-sm">Ver flujo</a>
+                </div>
+              </article>
+
+              <!-- Card 2 -->
+              <article class="course-card">
+                <div class="course-card-image">
+                  <div class="course-thumb-placeholder">💳</div>
+                  <span class="course-card-badge badge badge-accent no-dot">Finanzas</span>
+                </div>
+                <div class="course-card-body">
+                  <div class="course-category">Pagos & Alertas</div>
+                  <h3 class="course-title">Procesamiento de Pagos y Notificaciones Slack</h3>
+                  <p class="course-instructor">🔌 Stripe API + Slack Webhook</p>
+                  <div class="course-meta">
+                    <span class="course-meta-item">⚡ Trigger: Stripe Event</span>
+                    <span class="course-meta-item">🕒 Latencia: ~180ms</span>
+                    <span class="course-meta-item">👥 3,410 usuarios</span>
+                  </div>
+                </div>
+                <div class="course-card-footer">
+                  <div class="course-price"><span class="free">Activo</span></div>
+                  <a href="detalle-automatizacion.html" class="btn btn-primary btn-sm">Ver flujo</a>
+                </div>
+              </article>
+
+              <!-- Card 3 -->
+              <article class="course-card">
+                <div class="course-card-image">
+                  <div class="course-thumb-placeholder">🚀</div>
+                  <span class="course-card-badge badge badge-success no-dot">DevOps</span>
+                </div>
+                <div class="course-card-body">
+                  <div class="course-category">DevOps & Cloud</div>
+                  <h3 class="course-title">Orquestación CI/CD y Despliegues Cloud</h3>
+                  <p class="course-instructor">🔌 GitHub OAuth + AWS IAM</p>
+                  <div class="course-meta">
+                    <span class="course-meta-item">⚡ Trigger: Push to Main</span>
+                    <span class="course-meta-item">🕒 Latencia: ~1.2s</span>
+                    <span class="course-meta-item">👥 850 usuarios</span>
+                  </div>
+                </div>
+                <div class="course-card-footer">
+                  <div class="course-price"><span class="free">Activo</span></div>
+                  <a href="detalle-automatizacion.html" class="btn btn-primary btn-sm">Ver flujo</a>
+                </div>
+              </article>
+
+              <!-- Card 4 -->
+              <article class="course-card">
+                <div class="course-card-image">
+                  <div class="course-thumb-placeholder">🗃️</div>
+                  <span class="course-card-badge badge badge-warning no-dot">Base de Datos</span>
+                </div>
+                <div class="course-card-body">
+                  <div class="course-category">Almacenamiento</div>
+                  <h3 class="course-title">Respaldo Automático y Análisis con IA</h3>
+                  <p class="course-instructor">🔌 PostgreSQL + AWS S3 + OpenAI</p>
+                  <div class="course-meta">
+                    <span class="course-meta-item">⚡ Trigger: Cron Diario</span>
+                    <span class="course-meta-item">🕒 Latencia: ~3.5s</span>
+                    <span class="course-meta-item">👥 2,100 usuarios</span>
+                  </div>
+                </div>
+                <div class="course-card-footer">
+                  <div class="course-price"><span class="free">Activo</span></div>
+                  <a href="detalle-automatizacion.html" class="btn btn-primary btn-sm">Ver flujo</a>
+                </div>
+              </article>
+
+              <!-- Card 5 -->
+              <article class="course-card">
+                <div class="course-card-image">
+                  <div class="course-thumb-placeholder">🎧</div>
+                  <span class="course-card-badge badge badge-primary no-dot">Soporte</span>
+                </div>
+                <div class="course-card-body">
+                  <div class="course-category">Atención al Cliente</div>
+                  <h3 class="course-title">Enrutamiento Inteligente de Tickets</h3>
+                  <p class="course-instructor">🔌 Zendesk API + Anthropic Claude</p>
+                  <div class="course-meta">
+                    <span class="course-meta-item">⚡ Trigger: Nuevo Ticket</span>
+                    <span class="course-meta-item">🕒 Latencia: ~650ms</span>
+                    <span class="course-meta-item">👥 940 usuarios</span>
+                  </div>
+                </div>
+                <div class="course-card-footer">
+                  <div class="course-price"><span class="free">Activo</span></div>
+                  <a href="detalle-automatizacion.html" class="btn btn-primary btn-sm">Ver flujo</a>
+                </div>
+              </article>
+
+              <!-- Card 6 -->
+              <article class="course-card">
+                <div class="course-card-image">
+                  <div class="course-thumb-placeholder">📄</div>
+                  <span class="course-card-badge badge badge-gray no-dot">Productividad</span>
+                </div>
+                <div class="course-card-body">
+                  <div class="course-category">Documentos</div>
+                  <h3 class="course-title">Generación y Envío Automático de Facturas</h3>
+                  <p class="course-instructor">🔌 QuickBooks + Gmail OAuth 2.0</p>
+                  <div class="course-meta">
+                    <span class="course-meta-item">⚡ Trigger: Factura Creada</span>
+                    <span class="course-meta-item">🕒 Latencia: ~890ms</span>
+                    <span class="course-meta-item">👥 1,820 usuarios</span>
+                  </div>
+                </div>
+                <div class="course-card-footer">
+                  <div class="course-price"><span class="free">Activo</span></div>
+                  <a href="detalle-automatizacion.html" class="btn btn-primary btn-sm">Ver flujo</a>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- PAGINACIÓN -->
+            <div class="pagination">
+              <button class="page-btn" disabled aria-label="Página anterior">‹</button>
+              <button class="page-btn active" aria-current="page">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <button class="page-btn" aria-label="Página siguiente">›</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding-top:0;">
+        <span>© 2026 ZenSoftx Inc. Todos los derechos reservados.</span>
+        <span>Catálogo de Automatizaciones</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobile-nav');
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  </script>
+
+</body>
+</html>
