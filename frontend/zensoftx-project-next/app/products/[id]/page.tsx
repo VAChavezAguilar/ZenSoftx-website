@@ -27,9 +27,9 @@ export default async function ProductPage({params}: Props) {
     }
     return (
         <main>
-            <h1>Automatizacion: {product.name}</h1>
-            <p>Precio: {product.price}</p>
-            <p>Descripcion: {product.description}</p>
+            <h1>{product.name}</h1>
+            <p>{product.price}</p>
+            <p>{product.description}</p>
             <p>Fecha de consulta: {dateConsult}</p>
         </main>
     )

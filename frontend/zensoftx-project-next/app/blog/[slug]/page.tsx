@@ -36,8 +36,8 @@ export default async function PostPage({params}: Props) {
     }
     return (
         <article>
-            <h1>{post.title}</h1>
-            <p>{post.content}</p>
+            <h1>{post?.title}</h1>
+            <p>{post?.content}</p>
         </article>
     );
 }
